@@ -1,0 +1,198 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v6.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v6.0": {
+      "TextSimilarity/1.0.0": {
+        "dependencies": {
+          "Newtonsoft.Json": "13.0.3",
+          "TensorFlow.NET": "0.110.4"
+        },
+        "runtime": {
+          "TextSimilarity.dll": {}
+        }
+      },
+      "Fody/6.7.0": {},
+      "Google.Protobuf/3.21.9": {
+        "runtime": {
+          "lib/net5.0/Google.Protobuf.dll": {
+            "assemblyVersion": "3.21.9.0",
+            "fileVersion": "3.21.9.0"
+          }
+        }
+      },
+      "MethodBoundaryAspect.Fody/2.0.149": {
+        "dependencies": {
+          "Fody": "6.7.0"
+        },
+        "runtime": {
+          "lib/netstandard2.1/MethodBoundaryAspect.dll": {
+            "assemblyVersion": "2.0.149.0",
+            "fileVersion": "2.0.149.0"
+          }
+        }
+      },
+      "Newtonsoft.Json/13.0.3": {
+        "runtime": {
+          "lib/net6.0/Newtonsoft.Json.dll": {
+            "assemblyVersion": "13.0.0.0",
+            "fileVersion": "13.0.3.27908"
+          }
+        }
+      },
+      "OneOf/3.0.263": {
+        "runtime": {
+          "lib/netstandard2.0/OneOf.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "Protobuf.Text/0.7.1": {
+        "dependencies": {
+          "Google.Protobuf": "3.21.9"
+        },
+        "runtime": {
+          "lib/net6.0/Protobuf.Text.dll": {
+            "assemblyVersion": "0.7.1.0",
+            "fileVersion": "0.7.1.0"
+          }
+        }
+      },
+      "Razorvine.Pickle/1.4.0": {
+        "dependencies": {
+          "System.Memory": "4.5.5"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Razorvine.Pickle.dll": {
+            "assemblyVersion": "1.4.0.0",
+            "fileVersion": "1.4.0.0"
+          }
+        }
+      },
+      "Serilog/2.10.0": {
+        "runtime": {
+          "lib/netstandard2.1/Serilog.dll": {
+            "assemblyVersion": "2.0.0.0",
+            "fileVersion": "2.10.0.0"
+          }
+        }
+      },
+      "Serilog.Sinks.Console/4.1.0": {
+        "dependencies": {
+          "Serilog": "2.10.0"
+        },
+        "runtime": {
+          "lib/net5.0/Serilog.Sinks.Console.dll": {
+            "assemblyVersion": "4.1.0.0",
+            "fileVersion": "4.1.0.0"
+          }
+        }
+      },
+      "System.Memory/4.5.5": {},
+      "TensorFlow.NET/0.110.4": {
+        "dependencies": {
+          "MethodBoundaryAspect.Fody": "2.0.149",
+          "Newtonsoft.Json": "13.0.3",
+          "OneOf": "3.0.263",
+          "Protobuf.Text": "0.7.1",
+          "Razorvine.Pickle": "1.4.0",
+          "Serilog.Sinks.Console": "4.1.0"
+        },
+        "runtime": {
+          "lib/net6.0/Tensorflow.Binding.dll": {
+            "assemblyVersion": "0.110.3.0",
+            "fileVersion": "0.110.4.0"
+          }
+        }
+      }
+    }
+  },
+  "libraries": {
+    "TextSimilarity/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Fody/6.7.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-apsA8Hp9sAuOVmn9byPnCuqiQEjhAApqwNfEG+Gu0OyHUZfjHhLwvNQnAaONDdHWDXP/pBgpGXuscVwfEym8zQ==",
+      "path": "fody/6.7.0",
+      "hashPath": "fody.6.7.0.nupkg.sha512"
+    },
+    "Google.Protobuf/3.21.9": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-OTpFujTgkmqMLbg3KT7F/iuKi1rg6s5FCS2M9XcVLDn40zL8wgXm37CY/F6MeOEXKjdcnXGCN/h7oyMkVydVsg==",
+      "path": "google.protobuf/3.21.9",
+      "hashPath": "google.protobuf.3.21.9.nupkg.sha512"
+    },
+    "MethodBoundaryAspect.Fody/2.0.149": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-sKKEdwd/ETEbp0XTM5vhdXsGiKRQbmsgPmt3mpqM/Emzu3UHqyBMyO/1JicCp+AQ5pVozjC2Nlv/0KvriVi2ZA==",
+      "path": "methodboundaryaspect.fody/2.0.149",
+      "hashPath": "methodboundaryaspect.fody.2.0.149.nupkg.sha512"
+    },
+    "Newtonsoft.Json/13.0.3": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-HrC5BXdl00IP9zeV+0Z848QWPAoCr9P3bDEZguI+gkLcBKAOxix/tLEAAHC+UvDNPv4a2d18lOReHMOagPa+zQ==",
+      "path": "newtonsoft.json/13.0.3",
+      "hashPath": "newtonsoft.json.13.0.3.nupkg.sha512"
+    },
+    "OneOf/3.0.263": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-2xXFnUxkAA0rJ2sJz9FPeW/gzJIBvyj+xIvfTIkz42pz9JlcYse4/rwRnkmCsYxw6osy1whnBO6Ox6HBKEqDMw==",
+      "path": "oneof/3.0.263",
+      "hashPath": "oneof.3.0.263.nupkg.sha512"
+    },
+    "Protobuf.Text/0.7.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-DnNxGnnStnwyQ90Pv/I1Qy3imiuIULPfm7G839wC+LR/En3zxKJ6qVb5e6JqVDKa/xN733ATPryk9iIzKTgRlA==",
+      "path": "protobuf.text/0.7.1",
+      "hashPath": "protobuf.text.0.7.1.nupkg.sha512"
+    },
+    "Razorvine.Pickle/1.4.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-Muw+ehQ80owJ45blZIsHG9MNVZJd+kFmbpwm9z07XPXMqlEU3lvOOPVxvCZAK0Gc/gvKju7p4vw2jqfAQGCDHQ==",
+      "path": "razorvine.pickle/1.4.0",
+      "hashPath": "razorvine.pickle.1.4.0.nupkg.sha512"
+    },
+    "Serilog/2.10.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-+QX0hmf37a0/OZLxM3wL7V6/ADvC1XihXN4Kq/p6d8lCPfgkRdiuhbWlMaFjR9Av0dy5F0+MBeDmDdRZN/YwQA==",
+      "path": "serilog/2.10.0",
+      "hashPath": "serilog.2.10.0.nupkg.sha512"
+    },
+    "Serilog.Sinks.Console/4.1.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-K6N5q+5fetjnJPvCmkWOpJ/V8IEIoMIB1s86OzBrbxwTyHxdx3pmz4H+8+O/Dc/ftUX12DM1aynx/dDowkwzqg==",
+      "path": "serilog.sinks.console/4.1.0",
+      "hashPath": "serilog.sinks.console.4.1.0.nupkg.sha512"
+    },
+    "System.Memory/4.5.5": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-XIWiDvKPXaTveaB7HVganDlOCRoj03l+jrwNvcge/t8vhGYKvqV+dMv6G4SAX2NoNmN0wZfVPTAlFwZcZvVOUw==",
+      "path": "system.memory/4.5.5",
+      "hashPath": "system.memory.4.5.5.nupkg.sha512"
+    },
+    "TensorFlow.NET/0.110.4": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-AxIXHCu6xkzvSbBXcOQPBIHL3gPuc/lKfAwb4p/DS1PxAcPSHBE1t6bh+KhvsSa1hXECxlTWjNLCx3YMcbGBxg==",
+      "path": "tensorflow.net/0.110.4",
+      "hashPath": "tensorflow.net.0.110.4.nupkg.sha512"
+    }
+  }
+}

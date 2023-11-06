@@ -13,8 +13,13 @@ class Program
             Console.WriteLine("API key is missing.  Make sure to set the OPENAI_API_KEY environment variable.");
             return;
         }
-        
+
         Console.WriteLine("Text Similarity Checker");
+        Console.WriteLine("");
+        Console.WriteLine("A text similarity score will be calculated between 1 and 5.");
+        Console.WriteLine("A text similarity score equal to 1 indicates no similarity in the input text strings.");
+        Console.WriteLine("A text similarity score equal to 5 indicates identical input text strings.");
+        Console.WriteLine("");
 
         Console.Write("Enter the first text: ");
         string text1 = Console.ReadLine();
@@ -22,15 +27,38 @@ class Program
         Console.Write("Enter the second text: ");
         string text2 = Console.ReadLine();
 
-        var similarityScore = await CalculateSimilarity(apiKey, text1, text2);
+        if (string.IsNullOrWhiteSpace(text1) || string.IsNullOrWhiteSpace(text2))
+        {
+            Console.WriteLine("Both input texts must not be empty.");
+            return;
+        }
 
-        Console.WriteLine($"Similarity Score: {similarityScore}");
+        try
+        {
+            var similarityScore = await CalculateSimilarity(apiKey, text1, text2);
+
+            if (similarityScore < 1 || similarityScore > 5)
+            {
+                Console.WriteLine("Error:  Unable to calculate similarity.");
+            }
+            else
+            {
+                Console.WriteLine($"Similarity Score: {similarityScore}");
+            }
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"An error occurred: {ex.Message}");
+        }
     }
 
     static async Task<decimal> CalculateSimilarity(string apiKey, string text1, string text2)
     {
         decimal result = 0.0m;
         string prompt = $"Compare the following two sentences:\n1. {text1}\n2. {text2}\nSimilarity:";
+
+        text1 = text1.ToLower();
+        text2 = text2.ToLower();
 
         Request request = new Request
         {
@@ -39,7 +67,7 @@ class Program
                 new RequestMessage
                 {
                     Role = "system",
-                    Content = "You are a text comparison assistant. You will return a ranking from 1 to 5 when comparing text. 1 will be the text is not similar. A response of 5 will mean the text is identical.",
+                    Content = "You are a text comparison assistant. You will return a ranking from 1 to 5 when comparing text. 1 will mean the text is not similar. A response of 5 will mean the text is identical.",
                 },
                 new RequestMessage
                 {
@@ -48,21 +76,12 @@ class Program
                 },
             }
         };
+
         string requestJson = JsonSerializer.Serialize(request);
 
         using (var httpClient = new HttpClient())
         {
             httpClient.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", apiKey);
-
-            // var requestBody = new
-            // {
-            //     prompt,
-            //     max_tokens = 10,
-            //     n = 1,
-            //     // stop = "\n"
-            // };
-
-        //     string requestBodyJson = Newtonsoft.Json.JsonConvert.SerializeObject(requestBody);
 
             var content = new StringContent(requestJson, Encoding.UTF8, "application/json");
 
@@ -80,8 +99,14 @@ class Program
             }
         }
 
-        Console.WriteLine("Error: Unable to calculate similarity.");
-        return result;
+        // If API response is not valid, simulate an error response
+        return await SimulateErrorResponse();
+    }
+
+    private static async Task<decimal> SimulateErrorResponse()
+    {
+        // Simulate a custom API response with an out-of-range result
+        return 6.0m;
     }
 
     public class ApiResponse
@@ -94,7 +119,7 @@ class Program
         public string text { get; set; }
     }
 
-     public class Request
+    public class Request
     {
         [JsonPropertyName("model")]
         public string Model { get; set; } = "gpt-3.5-turbo";
@@ -154,4 +179,6 @@ class Program
         public string Content { get; set; }
     }
 }
+
+
 
