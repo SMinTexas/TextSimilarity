@@ -17,9 +17,9 @@ class Program
 
         Console.WriteLine("Text Similarity Checker");
         Console.WriteLine("");
-        Console.WriteLine("A text similarity score will be calculated between 1 and 5.");
+        Console.WriteLine("A text similarity score will be calculated between 1 and 10.");
         Console.WriteLine("A text similarity score equal to 1 indicates no similarity in the input text strings.");
-        Console.WriteLine("A text similarity score equal to 5 indicates identical input text strings.");
+        Console.WriteLine("A text similarity score equal to 10 indicates identical input text strings.");
         Console.WriteLine("");
 
         Console.Write("Enter the first text: ");
@@ -38,7 +38,7 @@ class Program
         {
             var similarityScore = await CalculateSimilarity(apiKey, text1, text2);
 
-            if (similarityScore < 1 || similarityScore > 5)
+            if (similarityScore < 1 || similarityScore > 10)
             {
                 Console.WriteLine($"Error:  Unable to calculate similarity in text strings {text1} and {text2}.");
             }
@@ -70,7 +70,7 @@ class Program
                 new RequestMessage
                 {
                     Role = "system",
-                    Content = "You are a text comparison assistant. You will return a ranking from 1 to 5 when comparing text. 1 will mean the text is not similar. A response of 5 will mean the text is identical.",
+                    Content = "You are a text comparison assistant. You will return a ranking from 1 to 10 when comparing text. 1 will mean the text is not similar. A response of 10 will mean the text is identical.",
                 },
                 new RequestMessage
                 {
@@ -109,7 +109,7 @@ class Program
     private static async Task<decimal> SimulateErrorResponse()
     {
         // Simulate a custom API response with an out-of-range result
-        return 6.0m;
+        return 11.0m;
     }
 
     static string RemoveSpecialCharacters(string text)
